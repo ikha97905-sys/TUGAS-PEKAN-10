@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Biodata</title>
+    <style>
+        #biodata {
+            width: 300px;
+            border: 1px solid #aaa;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        #biodata img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Biodata Mahasiswa</h2>
+
+<div id="biodata">
+    <p id="nama">Nama: John Doe</p>
+    <p id="nim">NIM: 12345678</p>
+    <p id="prodi">Program Studi: Informatika</p>
+    <img id="foto" src="https://via.placeholder.com/300">
+</div>
+
+<br>
+
+<button onclick="ubahNama()">Ubah Nama</button>
+<button onclick="ubahProdi()">Ubah Program Studi</button>
+<button onclick="gantiFoto()">Ganti Foto</button>
+<button onclick="hideBio()">Sembunyikan</button>
+<button onclick="showBio()">Tampilkan</button>
+
+<script>
+    function ubahNama() {
+        const namaBaru = prompt("Nama baru:");
+        if(namaBaru){
+            document.getElementById("nama").innerHTML = "Nama: " + namaBaru;
+        }
+    }
+
+    function ubahProdi() {
+        const prodi = prompt("Program Studi:");
+        if(prodi){
+            document.getElementById("prodi").innerHTML = "Program Studi: " + prodi;
+        }
+    }
+
+    function gantiFoto() {
+        const url = prompt("URL Foto:");
+        if(url){
+            document.getElementById("foto").setAttribute("src", url);
+        }
+    }
+
+    function hideBio() {
+        document.getElementById("biodata").style.display = "none";
+    }
+
+    function showBio() {
+        document.getElementById("biodata").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
