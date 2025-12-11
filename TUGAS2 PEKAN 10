@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+</head>
+<body>
+
+<h2>masukan kegiatan anda</h2>
+
+<input type="text" id="kegiatan" placeholder="Tambahkan kegiatan">
+<button onclick="tambah()">Tambah</button>
+<button onclick="hapus()">Hapus Terakhir</button>
+
+<ul id="list"></ul>
+
+<script>
+    function tambah() {
+        const input = document.getElementById("kegiatan");
+        if(input.value === "") return;
+
+        const li = document.createElement("li");
+        li.textContent = input.value;
+
+        document.getElementById("list").appendChild(li);
+        input.value = "";
+    }
+
+    function hapus() {
+        const list = document.getElementById("list");
+        if(list.lastChild){
+            list.removeChild(list.lastChild);
+        }
+    }
+</script>
+
+</body>
+</html>
