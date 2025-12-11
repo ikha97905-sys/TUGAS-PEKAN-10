@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAQ</title>
+    <style>
+        .pertanyaan {
+            font-weight: bold;
+            background: #eee;
+            padding: 8px;
+            cursor: pointer;
+        }
+        .jawaban {
+            display: none;
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<h2>selector&even</h2>
+
+<div class="item">
+    <div class="pertanyaan">Apa itu JavaScript?</div>
+    <div class="jawaban">JavaScript adalah bahasa pemrograman web.</div>
+</div>
+
+<div class="item">
+    <div class="pertanyaan">Apa itu DOM?</div>
+    <div class="jawaban">DOM adalah struktur dokumen HTML.</div>
+</div>
+
+<div class="item">
+    <div class="pertanyaan">Apa itu CSS?</div>
+    <div class="jawaban">CSS mengatur tampilan halaman web.</div>
+</div>
+
+<script>
+    const tanya = document.querySelectorAll(".pertanyaan");
+
+    tanya.forEach(function(el){
+        el.addEventListener("click", function(){
+            const jawab = this.nextElementSibling;
+            jawab.style.display = jawab.style.display === "block" ? "none" : "block";
+        });
+
+        el.addEventListener("mouseover", function(){
+            this.style.color = "blue";
+        });
+
+        el.addEventListener("mouseout", function(){
+            this.style.color = "black";
+        });
+    });
+</script>
+
+</body>
+</html>
